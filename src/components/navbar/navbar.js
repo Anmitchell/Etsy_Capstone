@@ -43,6 +43,7 @@ export default function NavBar({
                         className={styles.Logo}
                         onClick={handleLogoClick} />
                 </div>
+
                 <div className={styles.searchbarContainer}>
                     <SearchBar
                         searchTerm={searchTerm}
@@ -51,6 +52,8 @@ export default function NavBar({
                         filteredItems={filteredItems}
                         setFilteredItems={setFilteredItems} />
                 </div>
+
+                {/******* Favorites Icon **********/}
                 <div className={styles.icons}>
                     <Link to="/favorites">
                         <div>
@@ -58,6 +61,7 @@ export default function NavBar({
                             <img src={favHeart} alt="heart" />
                         </div>
                     </Link>
+                    
                     {user.name !== 'c186ec' ?
                         <Link to="/account">
                             <div>
@@ -70,6 +74,7 @@ export default function NavBar({
                             Log In
                         </div>
                     }
+
                     {userShop ? <Link to="/shopmgmt">
                         <div>
                             <i className="store"></i>
