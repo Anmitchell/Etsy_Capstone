@@ -154,8 +154,8 @@ function CategorySection(_ref) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _EditProductForm_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditProductForm.module.scss */ "./src/components/EditProductForm/EditProductForm.module.scss");
 /* harmony import */ var _FormInput_FormInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FormInput/FormInput */ "./src/components/FormInput/FormInput.js");
-/* harmony import */ var _utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/image-upload */ "./src/utilities/image-upload.js");
-/* harmony import */ var _utilities_shops_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/shops-api */ "./src/utilities/shops-api.js");
+/* harmony import */ var _utilities_image_upload__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/image-upload */ "./src/utilities/image-upload.js");
+/* harmony import */ var _utilities_shops_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/shops-api */ "./src/utilities/shops-api.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -193,7 +193,7 @@ function EditProductForm(_ref) {
     function _fetch() {
       _fetch = _asyncToGenerator(function* () {
         if (shop === null) {
-          const search = yield (0,_utilities_shops_api__WEBPACK_IMPORTED_MODULE_4__.getShop)(user.shop);
+          const search = yield (0,_utilities_shops_api__WEBPACK_IMPORTED_MODULE_3__.getShop)(user.shop);
           console.log(search);
           setShop(search);
         }
@@ -266,7 +266,7 @@ function EditProductForm(_ref) {
       for (let key in values) {
         formData.append(key, values[key]);
       }
-      const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__.itemPut)(id, formData);
+      const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_4__.itemPut)(id, formData);
       setPhotoUrl(data.secure_url);
       console.log(data);
     });
@@ -999,8 +999,8 @@ function OrderListItem(_ref) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ProductForm_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductForm.module.scss */ "./src/components/ProductForm/ProductForm.module.scss");
 /* harmony import */ var _FormInput_FormInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FormInput/FormInput */ "./src/components/FormInput/FormInput.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/image-upload */ "./src/utilities/image-upload.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _utilities_image_upload__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/image-upload */ "./src/utilities/image-upload.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1035,7 +1035,7 @@ function ProductForm(_ref) {
   });
   const [file, setFile] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const [photoUrl, setPhotoUrl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   const productInputs = [{
     id: "product-name",
     name: "name",
@@ -1103,7 +1103,7 @@ function ProductForm(_ref) {
       for (let key in productValues) {
         formData.append(key, productValues[key]);
       }
-      const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__.itemPost)(formData);
+      const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_4__.itemPost)(formData);
       setPhotoUrl(data.secure_url);
       console.log(data);
     });
@@ -1130,7 +1130,7 @@ function ProductForm(_ref) {
         //   // create product in shopmgmt page
         // } else {
         // send request to create product
-        const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__.itemPost)(userShop._id, formData);
+        const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_4__.itemPost)(userShop._id, formData);
         // set shop state to have shop info
         setUserShop(data.data.shop);
         setShopProducts([...shopProducts, data.data.item]);
@@ -1354,9 +1354,9 @@ function SearchBar(_ref) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ShopForm_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShopForm.module.scss */ "./src/components/ShopForm/ShopForm.module.scss");
 /* harmony import */ var _FormInput_FormInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FormInput/FormInput */ "./src/components/FormInput/FormInput.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/image-upload */ "./src/utilities/image-upload.js");
-/* harmony import */ var _utilities_shops_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utilities/shops-api */ "./src/utilities/shops-api.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _utilities_image_upload__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utilities/image-upload */ "./src/utilities/image-upload.js");
+/* harmony import */ var _utilities_shops_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/shops-api */ "./src/utilities/shops-api.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -1387,14 +1387,14 @@ function ShopForm(_ref) {
   });
   const [file, setFile] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const [photoUrl, setPhotoUrl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     function getAShop() {
       return _getAShop.apply(this, arguments);
     }
     function _getAShop() {
       _getAShop = _asyncToGenerator(function* () {
-        const shop = yield (0,_utilities_shops_api__WEBPACK_IMPORTED_MODULE_5__.getShop)(user.shop);
+        const shop = yield (0,_utilities_shops_api__WEBPACK_IMPORTED_MODULE_4__.getShop)(user.shop);
         setUserShop(shop);
       });
       return _getAShop.apply(this, arguments);
@@ -1449,13 +1449,13 @@ function ShopForm(_ref) {
         formData.append('token', localStorage.getItem('token'));
         // edit the shop in shop management
         if (location.pathname.includes('/shopmgmt')) {
-          const updatedShop = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__.shopPut)(userShop._id, formData);
+          const updatedShop = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_5__.shopPut)(userShop._id, formData);
           setUserShop(updatedShop);
           toggleEditShop();
           // create shop in account page
         } else {
           // send request to create shop
-          const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_3__.shopPost)(formData);
+          const data = yield (0,_utilities_image_upload__WEBPACK_IMPORTED_MODULE_5__.shopPost)(formData);
           // set user state to have shop info
           setUser(data.data.user);
           setUserShop(data.data.newShop);
@@ -2996,8 +2996,7 @@ function ShopPage(_ref) {
 /* harmony export */   userPut: () => (/* binding */ userPut)
 /* harmony export */ });
 /* harmony import */ var _utilities_users_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utilities/users-service */ "./src/utilities/users-service.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
@@ -3007,7 +3006,7 @@ function userPut(_x, _x2) {
 }
 function _userPut() {
   _userPut = _asyncToGenerator(function* (id, imageData) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/users/".concat(id), imageData, {
+    return axios__WEBPACK_IMPORTED_MODULE_0__["default"].put("/api/users/".concat(id), imageData, {
       headers: new Headers({
         'Content-Type': "multipart/form-data",
         'Authorization': "Bearer ".concat((0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_1__.getToken)())
@@ -3021,7 +3020,7 @@ function userPost(_x3) {
 }
 function _userPost() {
   _userPost = _asyncToGenerator(function* (imageData) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/users", imageData, {
+    return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/users", imageData, {
       headers: new Headers({
         'Content-Type': "multipart/form-data",
         'Authorization': "Bearer ".concat((0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_1__.getToken)())
@@ -3035,7 +3034,7 @@ function shopPost(_x4) {
 }
 function _shopPost() {
   _shopPost = _asyncToGenerator(function* (imageData) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/shops", imageData, {
+    return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/shops", imageData, {
       headers: new Headers({
         'Content-Type': "multipart/form-data",
         'Authorization': "Bearer ".concat((0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_1__.getToken)())
@@ -3049,7 +3048,7 @@ function shopPut(_x5, _x6) {
 }
 function _shopPut() {
   _shopPut = _asyncToGenerator(function* (id, imageData) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/shops/".concat(id), imageData, {
+    return axios__WEBPACK_IMPORTED_MODULE_0__["default"].put("/api/shops/".concat(id), imageData, {
       headers: new Headers({
         'Content-Type': "multipart/form-data",
         'Authorization': "Bearer ".concat((0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_1__.getToken)())
@@ -3063,7 +3062,7 @@ function itemPut(_x7, _x8, _x9) {
 }
 function _itemPut() {
   _itemPut = _asyncToGenerator(function* (shopId, itemId, imageData) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/shops/".concat(shopId, "/items/").concat(itemId), imageData, {
+    return axios__WEBPACK_IMPORTED_MODULE_0__["default"].put("/api/shops/".concat(shopId, "/items/").concat(itemId), imageData, {
       headers: new Headers({
         'Content-Type': "multipart/form-data",
         'Authorization': "Bearer ".concat((0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_1__.getToken)())
@@ -3077,7 +3076,7 @@ function itemPost(_x10, _x11) {
 }
 function _itemPost() {
   _itemPost = _asyncToGenerator(function* (shopId, imageData) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/shops/".concat(shopId, "/items"), imageData, {
+    return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/shops/".concat(shopId, "/items"), imageData, {
       headers: new Headers({
         'Content-Type': "multipart/form-data",
         'Authorization': "Bearer ".concat((0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_1__.getToken)())
@@ -7424,7 +7423,7 @@ module.exports = __webpack_require__.p + "30d3bcd23354a47bfa21.svg";
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_axios_index_js-node_modules_css-loader_dist_runtime_api_js-node_modules_-a86d86"], () => (__webpack_require__("./src/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-7b3006"], () => (__webpack_require__("./src/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
